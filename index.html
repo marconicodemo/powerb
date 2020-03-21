@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="./mdl/material.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-red.min.css" />
+  <script src="./mdl/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+  <link rel="manifest" href="./manifest.json">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Power-Bracelets.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+  
+
+  <title>Power bracelets</title>
+</head>
+<body>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Power blacelets</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation -->
+        <nav class="mdl-navigation">
+          <a id="connect_bt" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary">
+            <span class="text">Connect</span> <i class="material-icons">bluetooth</i>
+          </a>
+        </nav>
+
+      </div>
+    </header>
+    
+    <div class="tela active" id="tela-1">
+            
+        <div class="aba-1">Coleções de treinos </div>
+        <div class="aba-1-divisor"></div>
+        <div id="description-1">Treine os movimentos básicos do box.</div>
+        <img src="treino-1.jpg" alt="" id="treino-1">
+        <div id="treino-1-texto">Treino 1  Velocidade</div>
+        <img src="treino-2.jpg" alt="" id="treino-2">
+        <div id="treino-2-texto">Treino 2  Reflexos</div>
+        <img src="treino-3.jpg" alt="" id="treino-3">
+        <div id="treino-3-texto">Treino 3  Equilibrio</div>
+    </div>
+    <div class="tela" id="tela-2">
+        <div class="aba-1">Acompanhe seu progresso</div>
+        <div class="aba-1-divisor"></div>
+    </div>
+    <div class="tela" id="tela-3">
+        <div class="aba-1 active">Pulseira</div>
+        <div class="aba-2">Golpes</div>
+        <div class="aba-1-divisor"></div>
+        <div id="pulseira-texto">- Com base a posição padrão do Boxe, a pulseira irá vibrar na parte do pulso de acordo com o golpe selecionado.</div>
+        <div id="jab">Jab</div>
+        <div id="sep-1" class="separador-pulseira"></div>
+        <div id="uppercut">Uppercut</div>
+        <div id="sep-2" class="separador-pulseira"></div>
+        <div id="gancho">Gancho</div>
+        <div id="sep-3" class="separador-pulseira"></div>
+        <div id="direto">Direto</div>
+        <div id="sep-4" class="separador-pulseira"></div>
+        <div id="bloqueio">Bloqueio</div>
+        <div id="sep-5" class="separador-pulseira"></div>
+    </div>
+
+</div>
+
+<div id="bottom-bar">
+    
+
+    <a id="nav-1" class="nav active" href="#tela-1" data-target="tela-1"><i class="material-icons md-48">sports_mma</i></a>
+    <a id="nav-2" class="nav" href="#tela-2" data-target="tela-2">Progresso</a>
+    <a id="nav-3" class="nav" href="#tela-3" data-target="tela-3">Info</a>
+</div>
+<script type="text/javascript">
+
+let links = document.querySelectorAll('#bottom-bar a')
+
+for (link of links) {
+    let target = link.getAttribute('data-target')
+
+    link.addEventListener('click', function() {
+        mudaTela(target)
+    })
+}
+
+function mudaTela(target) {
+    let tela_target = document.getElementById(target)
+    let link_target = document.querySelector('a[data-target="'+target+'"]')
+
+    document.querySelector('div.tela.active').classList.remove('active')
+    document.querySelector('a.active').classList.remove('active')
+    
+    tela_target.classList.add('active')
+    link_target.classList.add('active')
+}
+
+</script>
+
+
+
+
+
+  </div>
+
+
+  <!-- Snack bar -->
+  <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button type="button" class="mdl-snackbar__action"></button>
+  </div>
+
+
+  <!--Script is imported here but not used right now-->
+  <script src="./index.js"></script>
+</body>
+</html>
